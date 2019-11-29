@@ -2,7 +2,7 @@
 FROM wangzj.club/nginx/nginx as base  # 不指定版本就是nginx:latest
 # 补充:如果本地镜像仓库没有，则从远程下载-->前提是做好docker login
 # 时区
-ARG Asia/Shanghai
+#  ARG Asia/Shanghai
 #  ldd /usr/sbin/httpd --->参照httpd来理解nginx所需要的动态连接库
 RUN mkdir -p /opt/var/cache/nginx && \
         cp -a --parents /usr/lib/nginx /opt && \
