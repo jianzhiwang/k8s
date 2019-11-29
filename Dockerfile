@@ -1,5 +1,6 @@
 # 多阶段构建
-FROM wangzj.club/nginx/nginx as base
+# FROM wangzj.club/nginx/nginx as base
+FROM nginx: as base
 # 补充:如果本地镜像仓库没有，则从远程下载-->判断是不是私有仓库
 # 时区
 ARG Asia/Shanghai
