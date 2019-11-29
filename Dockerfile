@@ -1,5 +1,5 @@
 
-FROM nginx: as base  # 不指定版本就是nginx:latest
+FROM wangzj.club/nginx/nginx as base  # 不指定版本就是nginx:latest
 # 补充:如果本地镜像仓库没有，则从远程下载-->前提是做好docker login
 # 时区
 ARG Asia/Shanghai
