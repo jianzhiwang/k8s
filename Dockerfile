@@ -1,6 +1,6 @@
 # 多阶段构建
-FROM wangzj.club/nginx/nginx as base  # 不指定版本就是nginx:latest
-# 补充:如果本地镜像仓库没有，则从远程下载-->前提是做好docker login
+FROM wangzj.club/nginx/nginx as base
+# 补充:如果本地镜像仓库没有，则从远程下载-->判断是不是私有仓库
 # 时区
 #  ARG Asia/Shanghai
 #  ldd /usr/sbin/httpd --->参照httpd来理解nginx所需要的动态连接库
@@ -26,5 +26,6 @@ RUN mkdir -p /opt/var/cache/nginx && \
 FROM gcr.io/distroless/base
 COPY --from=base /opt /
 EXPOSE 80
-VOLUME ["/usr/share/nginx/html"] # nginx默认的资源目录
+VOLUME ["/usr/share/nginx/html"] 
+# nginx默认的资源目录
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
