@@ -1,6 +1,6 @@
 # 多阶段构建
 FROM wangzj.club/nginx/nginx as base
-# 补充:如果本地镜像仓库没有，则从远程下载-->前提是做好docker login
+# 补充:如果本地镜像仓库没有，则从远程下载-->判断是不是私有仓库
 # 时区
 ARG Asia/Shanghai
 #  ldd /usr/sbin/httpd --->参照httpd来理解nginx所需要的动态连接库
