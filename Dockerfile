@@ -26,5 +26,6 @@ RUN mkdir -p /opt/var/cache/nginx && \
 FROM gcr.io/distroless/base
 COPY --from=base /opt /
 EXPOSE 80
-VOLUME ["/usr/share/nginx/html"] # nginx默认的资源目录
+VOLUME ["/usr/share/nginx/html"] 
+# nginx默认的资源目录
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
